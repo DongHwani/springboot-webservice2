@@ -21,7 +21,7 @@ before_install:
 before_deploy:
   - zip -r bkuekany-springboot-webservice
   - mkdir -p deploy
-  - mv bkuekany-springboot-webservice.zip deploy/bkuekany-springboot.zip
+  - mv bkuekany-springboot-webservice.zip deploy/bkuekany-springboot-webservice.zip
 
 deploy:
   - provider: s3
