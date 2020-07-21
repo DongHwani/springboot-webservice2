@@ -18,6 +18,23 @@ script: "./gradlew clean build"
 before_install:
   - chmod +x gradlew
 
+before_deploy:
+  - zip -r bkuekany-springboot-webservice
+  - mkdir -p deploy
+  - mv bkuekany-springboot-webservice.zip deploy/bkuekany-springboot.zip
+
+deploy:
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
+    secret_access_key: $AWS_SECRET_KEY # Travis repo setting에 설정된 값
+    bucket: bkuekany-springboot-build
+    region: ap-northeast-2
+    skip_cleanup: true
+    acl: private
+    local_dir: deploy
+    wait-until-deployed: true
+
+
 # CI 실행 완료시 메일로 알람
 notifications:
   email:
