@@ -19,9 +19,9 @@ before_install:
   - chmod +x gradlew
 
 before_deploy:
-  - zip -r bkuekany-springboot-webservice
+  - zip -r springboot-webservice2
   - mkdir -p deploy
-  - mv bkuekany-springboot-webservice.zip deploy/bkuekany-springboot-webservice.zip
+  - mv springboot-webservice2.zip deploy/springboot-webservice2.zip
 
 deploy:
   - provider: s3
