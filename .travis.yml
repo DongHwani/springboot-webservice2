@@ -17,10 +17,11 @@ script: "./gradlew clean build"
 # gradlew 명령어 권한 추가
 before_install:
   - chmod +x gradlew
+  - sudo
 
 before_deploy:
-  - zip -r springboot-webservice2
   - mkdir -p deploy
+  - cd deploy && zip -r before-deploy *
   - mv springboot-webservice2.zip deploy/springboot-webservice2.zip
 
 deploy:
