@@ -17,7 +17,6 @@ script: "./gradlew clean build"
 # gradlew 명령어 권한 추가
 before_install:
   - chmod +x gradlew
-  - sudo
 
 before_deploy:
   - mkdir -p deploy
