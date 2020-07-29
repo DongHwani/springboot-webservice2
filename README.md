@@ -17,10 +17,21 @@
 - Code로 인프라 환경을 구축한다는 말들이 이해가 안갔었는데 travis CI와 CodeDeploy 설정들을 yml 파일로 관리하면서 대략 어떤 의미인지
 이해하게 됨 
 
+- Chapter08부터 인프라 중심 내용 시작, 실질적 학습 구간 진행 부분 
+
+
+학습내용 정리
+---
+v. Step 01 배포프로세스  
+ - Local 개발 완료 > GitHub Push > EC2 GitHub Pull > Test 수행 > 배포  
+　　　　　　　　　　　　　　　               <------------ 배포스크립트 -----------> 
+ 
+v. Step 02 배포 프로세스   
+ Local 개발 완료 > GitHub Push > Travis CI, Build 및 Test 수행 > CodeDeploy 배포 > AWS EC2 
 
 실습 중 마주했던 오류
 ---
- - [Travis CI, yml 파일 parse 문제]()
+ - [Travis CI, yml 파일 parse 문제](https://github.com/dhkdhk/TIL/blob/master/ETC/YamlParseError.md)
  
  
 
